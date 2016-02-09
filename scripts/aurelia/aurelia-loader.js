@@ -1,0 +1,1 @@
+define(["aurelialib:aurelia-loader/aurelia-loader"], function(main) { return main; });

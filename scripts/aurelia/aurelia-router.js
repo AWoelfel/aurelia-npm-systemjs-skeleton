@@ -1,0 +1,1 @@
+define(["aurelialib:aurelia-router/aurelia-router"], function(main) { return main; });

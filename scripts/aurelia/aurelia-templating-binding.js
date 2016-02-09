@@ -1,0 +1,1 @@
+define(["aurelialib:aurelia-templating-binding/aurelia-templating-binding"], function(main) { return main; });

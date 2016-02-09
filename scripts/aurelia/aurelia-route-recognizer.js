@@ -1,0 +1,1 @@
+define(["aurelialib:aurelia-route-recognizer/aurelia-route-recognizer"], function(main) { return main; });

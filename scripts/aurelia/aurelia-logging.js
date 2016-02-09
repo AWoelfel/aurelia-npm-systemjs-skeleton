@@ -1,0 +1,1 @@
+define(["aurelialib:aurelia-logging/aurelia-logging"], function(main) { return main; });
