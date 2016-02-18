@@ -16,7 +16,7 @@
     "run-sequence": "^1.1.5",
     "typescript": "^1.7.5",
     "vinyl-paths": "^2.1.0",
-	"systemjs-builder": "0.15.5"
+    "systemjs-builder": "0.15.5"
   },
   "dependencies": {
     "aurelia-binding": "^1.0.0-beta.1.1.0",
