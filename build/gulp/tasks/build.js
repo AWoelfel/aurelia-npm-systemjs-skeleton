@@ -7,9 +7,9 @@ var es = require("event-stream");
 gulp.task("build-ts", function () {
     var tsProject = ts.createProject('tsconfig.json');
 
-    return tsProject.src()
+    return gulp.src("app/**/*.ts")
         .pipe(ts(tsProject))
-        .pipe(gulp.dest("build/out"));
+        .pipe(gulp.dest("build/out/app"));
 });
 
 // Copy views, stylesheets and other scripts to output directory

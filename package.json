@@ -1,8 +1,8 @@
 {
-  "name": "blog",
+  "name": "aurelia-npm-systemjs-skeleton",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "app/Main.js",
   "author": "Christian Kotzbauer <christian.kotzbauer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -15,7 +15,8 @@
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
     "typescript": "^1.7.5",
-    "vinyl-paths": "^2.1.0"
+    "vinyl-paths": "^2.1.0",
+	"systemjs-builder": "0.15.5"
   },
   "dependencies": {
     "aurelia-binding": "^1.0.0-beta.1.1.0",
@@ -42,6 +43,6 @@
     "aurelia-templating-router": "^1.0.0-beta.1.1.0",
     "bluebird": "^3.1.5",
     "core-js": "^2.0.3",
-    "systemjs": "^0.19.17"
+    "systemjs": "0.19.17"
   }
 }
