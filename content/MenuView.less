@@ -1,0 +1,174 @@
+
+@menuSize : 400px;
+@menuAnimationTime : 0.35s;
+@menuBackgroundColor: #4e5664;
+@menuBoxShadowColor: rgba(31, 28, 25, 0.77);
+
+.MenuView {
+
+    .media-mixin(@mediaWidth, @menuSize) {
+
+        @media screen and (min-width: @mediaWidth) {
+
+            .leftOpenAnimation-frames() {
+                from { right:calc(100%); }
+                to { right:calc(100% ~"-" @menuSize); }
+            }
+
+            .rightOpenAnimation-frames() {
+                from { left:calc(100%); }
+                to { left:calc(100% ~"-" @menuSize); }
+            }
+
+            .leftCloseAnimation-frames() {
+                from { right:calc(100% ~"-" @menuSize); }
+                to { right:calc(100%); }
+            }
+
+            .rightCloseAnimation-frames() {
+                from { left:calc(100% ~"-" @menuSize); }
+                to { left:calc(100%); }
+            }
+
+            //openAnimation
+            @-webkit-keyframes leftOpenAnimation { .leftOpenAnimation-frames;}
+            @-moz-keyframes leftOpenAnimation    { .leftOpenAnimation-frames;}
+            @-ms-keyframes leftOpenAnimation     { .leftOpenAnimation-frames;}
+            @-o-keyframes leftOpenAnimation      { .leftOpenAnimation-frames;}
+            @keyframes leftOpenAnimation         { .leftOpenAnimation-frames;}
+
+            @-webkit-keyframes rightOpenAnimation { .rightOpenAnimation-frames;}
+            @-moz-keyframes rightOpenAnimation    { .rightOpenAnimation-frames;}
+            @-ms-keyframes rightOpenAnimation     { .rightOpenAnimation-frames;}
+            @-o-keyframes rightOpenAnimation      { .rightOpenAnimation-frames;}
+            @keyframes rightOpenAnimation         { .rightOpenAnimation-frames;}
+
+
+            //closeAnimation
+            @-webkit-keyframes leftCloseAnimation { .leftCloseAnimation-frames;}
+            @-moz-keyframes leftCloseAnimation    { .leftCloseAnimation-frames;}
+            @-ms-keyframes leftCloseAnimation     { .leftCloseAnimation-frames;}
+            @-o-keyframes leftCloseAnimation      { .leftCloseAnimation-frames;}
+            @keyframes leftCloseAnimation         { .leftCloseAnimation-frames;}
+
+            @-webkit-keyframes rightCloseAnimation  { .rightCloseAnimation-frames;}
+            @-moz-keyframes rightCloseAnimation     { .rightCloseAnimation-frames;}
+            @-ms-keyframes rightCloseAnimation      { .rightCloseAnimation-frames;}
+            @-o-keyframes rightCloseAnimation       { .rightCloseAnimation-frames;}
+            @keyframes rightCloseAnimation          { .rightCloseAnimation-frames;}
+
+            .left {
+                &.open {
+                    right: calc(100% ~ "-" @menuSize);
+                }
+            }
+
+            .right {
+                &.open {
+                    left: calc(100% ~ "-" @menuSize);
+                }
+            }
+
+            .menu {
+                width:@menuSize;
+            }
+        }
+    }
+
+    .media-mixin(100px, 200px);
+    .media-mixin(400px, 400px);
+    .media-mixin(1024px, 500px);
+
+    .container {
+        overflow: hidden;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+    }
+
+    .menu {
+        position:absolute;
+        top:0;
+        bottom:0;
+
+        .menuHeader {
+            display: block;
+            padding: 15px 10px;
+
+            text-align: center;
+
+            .close {
+                float:left;
+                vertical-align: middle;
+                width: 30px;
+            }
+
+            .title {
+                line-height: 30px;
+                font-size:16pt;
+                color: white;
+
+            }
+
+        }
+
+        &.right {
+            .menuHeader {
+                .close {
+                    float: right;
+                }
+            }
+        }
+
+        .menuContent {
+            padding: 5px;
+        }
+
+    }
+
+    .left {
+        background-color: @menuBackgroundColor;
+
+        &.close {
+            right:calc(100%);
+        }
+        
+        &.animateOpen {
+            box-shadow: -2.5px -4.3px 28px 12px @menuBoxShadowColor;
+            animation-name: leftOpenAnimation;
+            animation-duration: @menuAnimationTime;
+        }
+
+        &.animateClose {
+            animation-name: leftCloseAnimation;
+            animation-duration: @menuAnimationTime;
+            box-shadow: none;
+        }
+    }
+
+    .right {
+        background-color: @menuBackgroundColor;
+
+        &.close {
+            left:calc(100%);
+        }
+        
+        &.animateOpen {
+            box-shadow: 2.5px -4.3px 28px 12px @menuBoxShadowColor;
+            animation-name: rightOpenAnimation;
+            animation-duration: @menuAnimationTime;
+        }
+
+        &.animateClose {
+            animation-name: rightCloseAnimation;
+            animation-duration: @menuAnimationTime;
+            box-shadow: none;
+        }
+    }
+
+
+
+
+}

@@ -1,0 +1,31 @@
+<template>
+    <div class="container">
+
+        <compose view="${getContentViewName()}"></compose>
+        <button click.trigger="openLeft()">open left</button>
+        <button click.trigger="openRight()">open right</button>
+
+        <div ref="leftMenu" if.bind="leftMenuView" class="menu left close">
+            <div class="menuHeader">
+                <img class="close" src="../../content/svg/Menu_Close.svg" click.delegate="closeLeft()">
+                <span class="title">${leftMenuView.getTitle()}</span>
+            </div>
+            <div class="menuContent">
+                <compose view-model.bind="leftMenuView"></compose>
+            </div>
+        </div>
+
+
+        <div ref="rightMenu" if.bind="rightMenuView" class="menu right close">
+            <div class="menuHeader">
+                <img class="close" src="../../content/svg/Menu_Close.svg" click.delegate="closeRight()">
+                <span class="title">${rightMenuView.getTitle()}</span>
+            </div>
+
+            <div class="menuContent">
+                <compose view-model.bind="rightMenuView"></compose>
+            </div>
+        </div>
+    </div>
+</template>
+

@@ -1,5 +1,5 @@
 <template>
-    ${myVariable}
-    <span text.bind="myVariable"></span>
-    <button click.trigger="buttonClicked()">Click here</button>
+    <div class="${content.getClassName()}">
+        <compose view-model.bind="content"></compose>
+    </div>
 </template>

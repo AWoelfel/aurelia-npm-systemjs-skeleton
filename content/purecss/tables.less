@@ -1,0 +1,92 @@
+/*!
+Pure v0.6.1-pre
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+
+@import "_constants";
+
+
+.pure-table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid @pureTableBorderColor;
+
+    caption {
+        color: @pureTableCaptionColor;
+        font: italic 85%/1 @pureTableCaptionFontFamily;
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    td,
+    th {
+        border-left: 1px solid @pureTableBorderColor;/*  inner column border */
+        border-width: 0 0 0 1px;
+        font-size: inherit;
+        margin: 0;
+        overflow: visible; /*to make ths where the title is really long work*/
+        padding: 0.5em 1em; /* cell padding */
+
+        /* Consider removing this next declaration block, as it causes problems when
+        there's a rowspan on the first cell. Case added to the tests. issue#432 */
+        &:first-child {
+            border-left-width: 0;
+        }
+
+    }
+
+
+    thead {
+        background-color: @pureTableHeadBackgroundColor;
+        color: @pureTableHeadColor;
+        text-align: left;
+        vertical-align: bottom;
+    }
+
+    /*
+    striping:
+       even - #fff (white)
+       odd  - #f2f2f2 (light gray)
+    */
+    td {
+        background-color: @pureTableCellBackgroundColorEven;
+    }
+    &-odd td {
+        background-color: @pureTableCellBackgroundColorOdd;
+    }
+
+    /* nth-child selector for modern browsers */
+    &-striped tr:nth-child(2n-1) td {
+        background-color: @pureTableCellBackgroundColorOdd;
+    }
+
+
+
+    /* BORDERED TABLES */
+    &-bordered {
+        td {
+            border-bottom: 1px solid @pureTableBorderColor;
+        }
+
+        tbody > tr:last-child > td {
+            border-bottom-width: 0;
+        }
+    }
+
+    /* HORIZONTAL BORDERED TABLES */
+    &-horizontal {
+        td, th {
+            border-width: 0 0 1px 0;
+            border-bottom: 1px solid @pureTableBorderColor;
+        }
+
+        tbody > tr:last-child > td {
+            border-bottom-width: 0;
+        }
+    }
+}
+

@@ -1,0 +1,68 @@
+/*!
+Pure v0.6.1-pre
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+/* misc default styling */
+
+
+@import "_constants";
+
+.pure-menu {
+
+    &-separator {
+        background-color: @pureMenuSeparatorBackgroundColor;
+        height: 1px;
+        margin: .3em 0;
+    }
+
+    &-horizontal .pure-menu-separator {
+        width: 1px;
+        height: 1.3em;
+        margin: 0 .3em ;
+    }
+
+    &-heading {
+        text-transform: uppercase;
+        color: @pureMenuHeadingColor;
+    }
+
+    &-link {
+        color: @pureMenuHeadingColor;
+    }
+
+    &-children {
+        background-color: @pureMenuChildrenBackgroundColor;
+    }
+
+    &-link,
+    &-disabled,
+    &-heading {
+        padding: .5em 1em;
+    }
+
+    &-disabled {
+        opacity: .5;
+
+        .pure-menu-link:hover {
+            background-color: @pureMenuDisabledLinkHoverBackgroundColor;
+        }
+    }
+
+    &-active > .pure-menu-link,
+    &-link:hover,
+    &-link:focus {
+        background-color: @pureMenuActiveColor;
+    }
+
+    &-selected {
+
+        .pure-menu-link,
+        .pure-menu-link:visited {
+            color: @pureMenuVisitedColor;
+        }
+    }
+}
+
+

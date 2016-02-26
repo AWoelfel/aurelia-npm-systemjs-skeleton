@@ -5,18 +5,27 @@
   "main": "app/Main.js",
   "author": "Christian Kotzbauer <christian.kotzbauer@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node_modules/.bin/http-server -c-1 ./build/out/",
+    "postinstall": "node node_modules/tsd/build/cli.js install"
+  },
   "devDependencies": {
     "aurelia-bundler": "^0.3.1",
     "browserify": "^13.0.0",
     "del": "^2.2.0",
     "event-stream": "^3.3.2",
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-less": "^3.0.5",
     "gulp-typescript": "^2.10.0",
+    "http-server": "^0.9.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
+    "systemjs-builder": "0.15.5",
+    "tsd": "^0.6.5",
     "typescript": "^1.7.5",
-    "vinyl-paths": "^2.1.0",
-    "systemjs-builder": "0.15.5"
+    "vinyl-paths": "^2.1.0"
   },
   "dependencies": {
     "aurelia-binding": "^1.0.0-beta.1.1.0",

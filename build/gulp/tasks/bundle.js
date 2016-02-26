@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var bundler = require('aurelia-bundler');
-var fs = require("fs");
 
 var bundles = {
     "app/app-bundle": {
@@ -87,11 +86,11 @@ var config = {
 };
 
 // Revert bundling changes
-gulp.task('unbundle', function() {
+gulp.task('unbundle',['build'], function() {
     return bundler.unbundle(config);
 });
 
 // Do bundling
-gulp.task('bundle', ['unbundle'],  function() {
+gulp.task('bundle', ['unbundle', 'build'],  function() {
     return bundler.bundle(config);
 });
